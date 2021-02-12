@@ -1,4 +1,5 @@
 from typing import Any
+
 from speech_recognition import Microphone, Recognizer
 
 
@@ -15,5 +16,3 @@ class Listener:
             audio_listened = self._recognizer.listen(source)
             text_listened: Any = self._recognizer.recognize_google(audio_listened)
             self.text: str = text_listened.lower()
-            print(self.text)
-

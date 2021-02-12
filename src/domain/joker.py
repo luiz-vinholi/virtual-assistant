@@ -1,5 +1,6 @@
-from .talker import Talker
 import pyjokes
+
+from .talker import Talker
 
 
 class Joker(Talker):

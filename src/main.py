@@ -2,12 +2,14 @@
 from domain.assistant import Assistant
 
 
+def command_orchestrator(command):
+    if 'tell a joke' in command:
+        assistant.tell_a_joke()
+
+
 while True:
-    try:
-        assistant = Assistant()
-        assistant.listen()
-        command = assistant.text
-        if 'tell a joke' in command:
-            assistant.tell_a_joke()
-    except:
-        pass
+    assistant = Assistant()
+    assistant.listen()
+    command = assistant.command
+    if command:
+        command_orchestrator(command)
