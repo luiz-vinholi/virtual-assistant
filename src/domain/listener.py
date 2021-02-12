@@ -4,6 +4,7 @@ from speech_recognition import Microphone, Recognizer
 
 class Listener:
     def __init__(self) -> None:
+        super(Listener, self).__init__()
         self._recognizer = Recognizer()
         self._recognizer.energy_threshold = 4000
 
