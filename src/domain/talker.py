@@ -13,6 +13,11 @@ class Talker:
                 break
 
     def talk(self, text: str) -> None:
+        """Makes a sound according to the text.
+
+        Args:
+            text (str): Text to say.
+        """
         self._engine.say(text)
         self._engine.runAndWait()
     
