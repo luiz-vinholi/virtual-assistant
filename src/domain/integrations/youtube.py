@@ -1,7 +1,9 @@
 from pywhatkit import playonyt
 
 
-class Youtuber:
+class Youtube:
+    """Youtube integration"""
+
     def play_video(self, title: str) -> None:
         """Open video on yotube from browser.
 

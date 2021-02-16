@@ -3,10 +3,10 @@ from typing import Optional
 from domain.joker import Joker
 from domain.listener import Listener
 from domain.talker import Talker
-from domain.youtuber import Youtuber
+from domain.integrations.youtube import Youtube
 
 
-class Assistant(Listener, Joker, Talker, Youtuber):
+class Assistant(Listener, Joker, Talker, Youtube):
     def __init__(self, name: str = 'alexa', activate_me_with: Optional[str] = 'hey') -> None:
         super(Assistant, self).__init__()
         self.name: str = name
