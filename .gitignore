@@ -2,3 +2,5 @@
 venv
 __pycache__
 pywhatkit_dbs.txt
+.env
+*.cache-*
