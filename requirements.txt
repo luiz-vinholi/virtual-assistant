@@ -14,13 +14,16 @@ PyMsgBox==1.0.9
 pyperclip==1.8.1
 PyRect==0.1.4
 PyScreeze==0.1.26
+python-dotenv==0.15.0
 python3-xlib==0.15
 pyttsx3==2.90
 PyTweening==1.0.3
 pywhatkit==3.9
 requests==2.25.1
+six==1.15.0
 soupsieve==2.2
 SpeechRecognition==3.8.1
+spotipy==2.16.1
 toml==0.10.2
 urllib3==1.26.3
 wikipedia==1.4.0
