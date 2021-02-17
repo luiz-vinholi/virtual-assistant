@@ -1,5 +1,6 @@
 import spotipy
-from exceptions.spotify.invalid_device_name_exception import InvalidDeviceNameException
+from exceptions.spotify import InvalidDeviceNameException
+from exceptions.spotify.invalid_search_exception import InvalidSearchException
 from settings.settings import Settings
 from spotipy.oauth2 import SpotifyOAuth
 
@@ -10,6 +11,8 @@ class Spotify:
     def __init__(self) -> None:
         self._authenticate()
         self.set_device(Settings.spotify.device_name)
+        ## implementar historico
+        self.history = []
 
     def set_device(self, device_name: str) -> None:
         """Set device to play musics Spotify.
@@ -41,3 +44,25 @@ class Spotify:
             scope=Settings.spotify.scope,
         )
         self._spotify = spotipy.Spotify(auth_manager=oauth_manager)
+
+    def _search_type(self, name: str, type: str):
+        """Search in spotify.
+
+        Args:
+            name (str): Name to search.
+            type (str): Type to search. One of 'artist', 'album', 'track', 'playlist'.
+
+        Raises:
+            InvalidSearchException: When not found any item of the search.
+
+        Returns:
+            tuple: First item is NAME found and second is URI.
+        """
+        name_to_search = name.replace(' ', '+')
+        results = self._spotify.search(q=name_to_search, limit=1, type=type)
+        items = results[f'{type}s']['items']
+        if not items:
+            raise InvalidSearchException(f'No {type} found {name}')
+        uri = items[0]['uri']
+        name = items[0]['name']
+        return name, uri
