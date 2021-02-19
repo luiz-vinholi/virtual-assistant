@@ -5,7 +5,6 @@ from domain.assistant import Assistant
 @joke_command
 @youtube_command
 def command_orchestrator_helper(command: str, assistant: Assistant):
-    pass
     command_words = command.split(' ')
     first_command_word = command_words[0]
     if 'play' in first_command_word:
