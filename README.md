@@ -9,7 +9,9 @@ Virtual assistant (like Alexa) in Python.
 - [ ] Shuffle track on Spotify
 - [ ] Add track to queue on Spotify
 - [ ] Play sounds in history on Spotify
-- [ ] See weather forecast
+- [ ] Say appointments of the day 
+- [ ] Say today's weather forecast
+- [ ] Say week's weather forecast
 - [ ] Say the current time
 - [ ] Say something when execute or not found the command
 - [ ] Lazy activation
