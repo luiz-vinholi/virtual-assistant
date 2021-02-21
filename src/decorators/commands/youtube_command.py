@@ -8,7 +8,8 @@ def youtube_command(func):
         is_in_command = check_is_in_command_helper(youtube_commands, command)
         if is_in_command:
             title = command.replace('play on youtube', '')
-            assistant.play_video(title)
+            title = command.replace('open on youtube', '')
+            assistant.youtube.play_video(title)
             return
         func(command, assistant)
     return wrapper
